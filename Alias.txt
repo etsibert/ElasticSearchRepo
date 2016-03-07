@@ -1,0 +1,11 @@
+
+http://localhost:9200/
+  
+POST /_aliases
+{
+"actions" : [
+  { "add" : { "index" : "events_dec2015", "alias":"myevents" } },
+  { "add" : { "index" : "events_jan2016", "alias":"myevents" } },
+  { "add" : { "index" : "events_feb2016", "alias":"myevents" } }
+  ]
+}

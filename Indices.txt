@@ -1,0 +1,33 @@
+
+http://localhost:9200/
+  
+PUT /events_dec2015
+{  
+"settings":{
+      "index":{
+                "number_of_shards":3,       	
+                "number_of_replicas":2
+              }  
+          }
+}
+
+
+PUT /events_jan2016
+{  
+"settings":{
+      "index":{
+                "number_of_shards":3,       	
+                "number_of_replicas":2
+              }  
+          }
+}
+
+PUT /events_feb2016
+{  
+"settings":{
+      "index":{
+                "number_of_shards":3,       	
+                "number_of_replicas":2
+              }  
+          }
+}

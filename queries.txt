@@ -1,0 +1,34 @@
+
+http://localhost:9200/
+  
+GET /myevents/_search
+{"size": 1000,
+"query": {
+  "bool": {
+    "must": [
+       {"match": {"_index": "events_jan2016"}},
+       {"match": {"sensor": "TempSensor003"}}
+    ] 
+  } 
+ }
+}
+
+
+GET /myevents/_search?size=1000
+{
+  "query": {
+    "bool": {
+      "must": [
+        {"match": {"_index": "events_feb2016"}},
+        {"match": {"sensor": "TempSensor003"}}
+      ]
+    }
+  },
+  "aggs": {
+    "avgTemp_Sens003_Feb2016": {"avg": {"field":"value"}},
+    "maxTemp_Sens003_Feb2016": {"max": {"field":"value"}},
+    "minTemp_Sens003_Feb2016": {"min": {"field":"value"}},
+    "percentilesTemp_Sens003_Feb2016": {"percentiles": {"field":"value"}}
+  }
+  
+}

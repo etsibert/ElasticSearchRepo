@@ -1,7 +1,6 @@
 #ElasticSearch R Integration
 library(RJSONIO)
 library(httr)
-library(ggplot2)
 library(dplyr)
 library(zoo)
 
